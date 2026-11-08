@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172b3a">
+  <meta name="description" content="保存呼出し工房の使い方。Unityのシーン、工房の作業、カメラを保存して呼び出す手順と注意点を紹介します。">
+  <title>保存呼出し工房｜使い方</title>
+  <link rel="stylesheet" href="./manual.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="masthead">
+    <a class="brand" href="#top" aria-label="保存呼出し工房の先頭">
+      <span class="brand-mark" aria-hidden="true">H</span>
+      <span><strong>保存呼出し工房</strong><small>HOZON KOUBO · 使用手引書</small></span>
+    </a>
+    <div class="masthead-note">Unity の作業状態を、スロットに残す</div>
+  </header>
+
+  <div class="layout" id="top">
+    <nav class="toc" aria-label="目次">
+      <p class="toc-heading">この手引書</p>
+      <a href="#first">はじめる前に</a>
+      <a href="#save">今の状態を保存する</a>
+      <a href="#recall">保存した状態を呼び出す</a>
+      <a href="#before">呼び出す前に戻す</a>
+      <a href="#shared">ほかのシーンへの影響</a>
+      <a href="#bone">ボーン工房を使っているとき</a>
+      <a href="#limits">戻るもの・戻らないもの</a>
+      <a href="#slots">無料版と有料版</a>
+      <div class="toc-foot"><span class="dot" aria-hidden="true"></span> 操作は Unity の Edit モードで行います</div>
+    </nav>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">GP25 · SCENE / WORK / VIEW</p>
+          <h1 id="page-title">いまの作業を残して、<br>あとから戻す。</h1>
+          <p class="hero-lede">シーン、対応する工房の作業、カメラをひとつのスロットに保存します。別の案を試したあとも、保存した時点の景色へ戻れます。</p>
+          <a class="hero-link" href="#save">保存の手順を見る <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="snapshot-diagram" role="img" aria-label="開いているシーン、工房の作業、カメラをスロットに保存する図">
+          <div class="diagram-top"><span>いまの作業</span><span class="live-mark"><i></i> LIVE</span></div>
+          <div class="scene-frame">
+            <div class="frame-corner corner-a"></div><div class="frame-corner corner-b"></div>
+            <div class="frame-corner corner-c"></div><div class="frame-corner corner-d"></div>
+            <div class="frame-orbit"><span></span></div>
+            <div class="frame-lines"><i></i><i></i><i></i></div>
+          </div>
+          <div class="save-rail"><span></span><b>保存</b><span></span></div>
+          <div class="slot-card"><span class="slot-glyph" aria-hidden="true">▤</span><span><small>スロット</small><strong>作業の記録</strong></span><span class="slot-check" aria-hidden="true">✓</span></div>
+          <p class="diagram-caption">シーン　＋　工房の作業　＋　カメラ</p>
+        </div>
+      </section>
+
+      <div class="intro-band">
+        <span class="intro-label">できること</span>
+        <p>保存した場面を呼び出すとき、現在の状態もひとつ預かります。呼び出しが合わなければ、その直前へ戻せます。</p>
+      </div>
+
+      <section class="chapter" id="first">
+        <div class="section-head"><span class="section-mark" aria-hidden="true">⌕</span><div><p class="eyebrow">START HERE</p><h2>はじめる前に</h2></div></div>
+        <div class="open-row">
+          <span class="open-icon" aria-hidden="true">↗</span>
+          <div><strong>Unity のメニューから開きます</strong><p><kbd>Tools</kbd> <span class="chevron">›</span> <kbd>Hozon Koubo</kbd> <span class="chevron">›</span> <kbd>Open</kbd></p></div>
+        </div>
+        <ul class="check-list">
+          <li>保存したいシーンは、先に一度ファイルへ保存してください。</li>
+          <li>再生中や Unity が準備・コンパイル中のあいだは、保存と呼び出しはできません。</li>
+          <li>空でない未保存シーンが開いている場合も保存できません。先にシーンを保存してください。</li>
+        </ul>
+        <p class="quiet">ほかの工房にある切り替えの行からも開けます。上部には、いっしょに状態を保存できる工房が表示されます。</p>
+      </section>
+
+      <section class="chapter" id="save">
+        <div class="section-head"><span class="section-mark" aria-hidden="true">＋</span><div><p class="eyebrow">KEEP A MOMENT</p><h2>今の状態を保存する</h2></div></div>
+        <ol class="steps">
+          <li><span class="step-title">名前を付ける</span><p>「名前」欄に分かりやすい名前を入力します。空欄のまま保存すると、日付と時刻が名前になります。</p></li>
+          <li><span class="step-title">保存する範囲を見ておく</span><p>シーン、対応工房の作業ファイル、Scene ビューと Game ビューのカメラが記録されます。連携に対応した工房は窓上部の一覧で確認できます。開いている工房の値や対象は、保存できるものが記録されます。</p></li>
+          <li><span class="step-title">［今の状態を保存］を押す</span><p>ライブラリに新しいスロットが加わります。名前・保存日時・容量・シーン名が一覧に表示されます。</p></li>
+        </ol>
+        <aside class="note note-blue"><strong>別の案も残すとき</strong><p>新しい状態は、もう一度［今の状態を保存］して別のスロットにします。既存スロットを選び［上書き］すると、そのスロットの記録が今の状態に入れ替わります。</p></aside>
+        <figure class="product-screen">
+          <img src="./images/gp25-manual-library.png" alt="Unityの保存呼出し工房の窓と、保存済みスロットが並ぶライブラリ" loading="lazy">
+          <figcaption>保存した状態は、名前と日時を見てライブラリから選びます。</figcaption>
+        </figure>
+      </section>
+
+      <section class="chapter" id="recall">
+        <div class="section-head"><span class="section-mark" aria-hidden="true">↻</span><div><p class="eyebrow">RETURN TO A SAVED STATE</p><h2>保存した状態を呼び出す</h2></div></div>
+        <div class="scope-box">
+          <p class="scope-title">呼び出す物（初期状態では両方オン）</p>
+          <div class="scope-options">
+            <div><span class="option-check" aria-hidden="true">✓</span><strong>カメラ</strong><small>Scene ビュー・Game ビュー</small></div>
+            <div><span class="option-check" aria-hidden="true">✓</span><strong>各工房の窓の状態</strong><small>対応工房の値や対象など</small></div>
+          </div>
+          <p class="scope-always"><b>いつも呼び出す</b> シーンと工房の作業ファイル</p>
+        </div>
+        <ol class="steps">
+          <li><span class="step-title">必要なら「呼び出す物」を選ぶ</span><p>カメラや工房の窓の状態を現在のままにしたいときは、該当項目のチェックを外します。シーンと工房の作業ファイルは、チェックの有無にかかわらず保存時点に戻ります。</p></li>
+          <li><span class="step-title">スロットの［呼び出す］を押す</span><p>確認画面に、上書きするファイル数と、同じ素材を使っているほかのシーンが表示されます。内容を読み、戻してよければ確認画面の［呼び出す］を押します。やめるときは［やめる］を選びます。</p></li>
+          <li><span class="step-title">結果と案内を読む</span><p>完了や注意点は窓の下に表示されます。呼び出したときに工房が入っていない場合、その工房の値は戻らず、ほかの処理は続きます。戻せなかった工房や項目があれば、案内に名前が出ます。</p></li>
+        </ol>
+        <aside class="note note-amber"><strong>呼び出し前の状態は自動で預かります</strong><p>確認画面で続けると、今の状態が「呼び出す前の状態」として保存されます。もし結果が違ったら、次の項目の操作で戻せます。</p></aside>
+      </section>
+
+      <section class="chapter recovery" id="before">
+        <div class="section-head"><span class="section-mark" aria-hidden="true">↶</span><div><p class="eyebrow">A WAY BACK</p><h2>呼び出す前に戻す</h2></div></div>
+        <p>直近の呼び出し前の状態が預けてあると、［呼び出す前に戻す］が表示されます。押すと確認画面が出ます。続けると現在の状態は失われるため、残したい作業は先にスロットへ保存してください。確認画面で続けると、呼び出しの直前へ戻ります。</p>
+        <div class="recovery-flow" aria-label="呼び出し前の状態へ戻す流れ">
+          <div><small>保存していた状態</small><b>呼び出す</b></div><span aria-hidden="true">→</span><div class="recovery-current"><small>合わなかったら</small><b>呼び出す前に戻す</b></div>
+        </div>
+        <div class="two-notes">
+          <aside class="note note-red"><strong>呼び出しが途中で止まったとき</strong><p>［呼び出す前に戻す］を押してください。呼び出しの途中で止まっても、預かりはその呼び出しより前の状態のまま残ります。戻す処理も途中で止まった場合は、原因を解消してから同じボタンをもう一度押します。</p></aside>
+          <aside class="note note-plain"><strong>次の呼び出しを始めると</strong><p>通常は、その次の呼び出しの直前に預かりが入れ替わります。前の呼び出しが途中で止まっている場合は、預かりを上書きせず、元の状態を保ちます。</p></aside>
+        </div>
+        <p class="quiet">呼び出し前の状態は、ライブラリのスロット数には数えません。</p>
+      </section>
+
+      <section class="chapter" id="shared">
+        <div class="section-head"><span class="section-mark" aria-hidden="true">↔</span><div><p class="eyebrow">SHARED FILES</p><h2>ほかのシーンへの影響</h2></div></div>
+        <p>複数のシーンが同じ素材ファイルを使っていると、そのファイルを呼び出しで戻したとき、ほかのシーンにも同じ変化が反映されます。確認画面には、見つかったシーンが表示されます。</p>
+        <div class="scene-map">
+          <div class="scene-node"><small>シーン A</small><b>同じ素材</b></div>
+          <div class="shared-file"><span aria-hidden="true">↕</span><b>共通の素材</b><small>一つのファイル</small></div>
+          <div class="scene-node"><small>シーン B</small><b>同じ素材</b></div>
+        </div>
+        <div class="impact-list">
+          <h3>影響を避けたいとき</h3>
+          <ul>
+            <li>呼び出しをやめ、そのシーンが使う工房の素材を複製し、参照先を複製へ変えてから保存し直します。アバターや衣装の複製だけでは、素材を共有したままの場合があります。</li>
+            <li>先に別のスロットへ控えを残すこともできます。ただし、その控えを呼び出すと共有素材も戻るので、ほかのシーンにも影響します。</li>
+          </ul>
+        </div>
+        <p class="quiet">保存後に作られたファイルは、自動で削除されません。</p>
+      </section>
+
+      <section class="chapter bone-chapter" id="bone">
+        <div class="section-head"><span class="section-mark" aria-hidden="true">骨</span><div><p class="eyebrow">BONE KOUBO</p><h2>ボーン工房を使っているとき</h2></div></div>
+        <p>ボーン工房で編集中の複製は、保存した時点の形でシーンに戻ります。一方、引いたボーンの一覧など、ボーン工房の編集の続きは戻りません。</p>
+        <div class="bone-direction"><span class="bone-icon" aria-hidden="true">↗</span><p><strong>編集を続けるには</strong><br>呼び出したあと、シーンに戻った複製を保存してから、ボーン工房で選び直してください。呼び出し時に案内が出たら、その内容を確認してから操作します。</p></div>
+      </section>
+
+      <section class="chapter" id="limits">
+        <div class="section-head"><span class="section-mark" aria-hidden="true">≠</span><div><p class="eyebrow">WHAT COMES BACK</p><h2>戻るもの・戻らないもの</h2></div></div>
+        <div class="compare-grid">
+          <article class="compare-card comes-back"><h3><span aria-hidden="true">●</span> 保存した時点へ戻る</h3>
+            <ul><li>開いているシーン</li><li>シーンが使う工房の作業用素材</li><li>対応する工房の記録済みの値や状態</li><li>Scene ビューと Game ビューのカメラ（選択している場合）</li></ul>
+          </article>
+          <article class="compare-card stays"><h3><span aria-hidden="true">—</span> この工房では戻らない</h3>
+            <ul><li>Unity の Ctrl+Z 履歴全体</li><li>描いている途中の線、選択中の物</li><li>ウィンドウの配置、Hierarchy の開閉状態</li><li>ライトのベイク結果、プロジェクト設定、スクリプト</li><li>購入した素材やプレハブの元ファイル</li></ul>
+          </article>
+        </div>
+        <p class="limit-line">シーン内のプレハブ変更はシーンと一緒に戻りますが、Project 内にある元のプレハブファイルは対象外です。Unity の Ctrl+Z では、保存呼出し工房の呼び出し全体を取り消せません。色ツヤ工房の編集履歴など、各工房が独自に保存する履歴はその工房の扱いに従います。</p>
+        <div class="limit-line limit-strong"><b>ひとつのプロジェクト内で使います。</b> スロットは別の Unity プロジェクトへ持ち運べません。</div>
+      </section>
+
+      <section class="chapter slots-chapter" id="slots">
+        <div class="section-head"><span class="section-mark" aria-hidden="true">▤</span><div><p class="eyebrow">SLOTS</p><h2>無料版と有料版</h2></div></div>
+        <div class="edition-table">
+          <div class="edition free"><span class="edition-kicker">FREE</span><h3>無料版</h3><p>最初のスロットを使えます。保存した内容を［上書き］して、同じスロットを使い続けられます。</p></div>
+          <div class="edition paid"><span class="edition-kicker">MORE ROOM</span><h3>有料版</h3><p>2つ目以降のスロットを使えます。保存した状態を複数残して、使い分けられます。</p><a href="https://appluna.booth.pm/items/9114686" target="_blank" rel="noopener noreferrer">有料版の案内を見る <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <ul class="check-list compact">
+          <li>スロットは作成された順に並びます。</li>
+          <li>スロットの名前変更と削除ができます。削除前には確認が表示され、削除したスロットは元に戻せません。</li>
+          <li>無料版では、2つ目以降を作成・呼び出し・上書き・名前変更しようとすると有料版の案内が表示されます。</li>
+          <li>［呼び出す前に戻す］用の預かりは、スロット数に含まれません。</li>
+        </ul>
+      </section>
+
+      <section class="closing" aria-label="保存場所">
+        <div class="closing-rule"><span></span><i></i><span></span></div>
+        <p class="eyebrow">YOUR WORK, KEPT IN THIS PROJECT</p>
+        <h2>保存した記録は、<br>製品本体と別の場所にあります。</h2>
+        <p>ライブラリは <code>Assets/GP25_HozonKoubo_DataFile/Library</code> に保存されます。製品を更新しても、この保存場所は別に保たれます。</p>
+      </section>
+
+      <footer class="footer">
+        <span class="footer-mark" aria-hidden="true">H</span>
+        <p><strong>保存呼出し工房</strong><br><small>著作権は、作者（アプリ工房ルナ）が持ちます。</small></p>
+        <a href="#top">ページの先頭へ ↑</a>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
