@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#172b3a">
-  <meta name="description" content="保存呼出し工房の使い方。Unityのシーン、工房の作業、カメラを保存して呼び出す手順と注意点を紹介します。">
-  <title>保存呼出し工房｜使い方</title>
+  <meta name="description" content="保存呼出し工房の使い方。Unity のシーン、工房の作業、カメラをスロットに保存して呼び出す、完全無料のツールです（VRChat のアバター改変にも）。手順と注意点を紹介します。">
+  <title>保存呼出し工房｜Unity の作業をスロットに保存・完全無料 使用手引書</title>
   <link rel="stylesheet" href="./manual.css">
 </head>
 <body>
@@ -28,8 +28,7 @@
       <a href="#shared">ほかのシーンへの影響</a>
       <a href="#bone">ボーン工房を使っているとき</a>
       <a href="#limits">戻るもの・戻らないもの</a>
-      <a href="#slots">無料版と Pro</a>
-      <a href="#pro-key">Proキーの入れ方</a>
+      <a href="#slots">スロットは無制限・完全無料</a>
       <div class="toc-foot"><span class="dot" aria-hidden="true"></span> 操作は Unity の Edit モードで行います</div>
     </nav>
 
@@ -158,32 +157,17 @@
       </section>
 
       <section class="chapter slots-chapter" id="slots">
-        <div class="section-head"><span class="section-mark" aria-hidden="true">▤</span><div><p class="eyebrow">SLOTS</p><h2>無料版と Pro</h2></div></div>
+        <div class="section-head"><span class="section-mark" aria-hidden="true">▤</span><div><p class="eyebrow">SLOTS</p><h2>スロットは無制限・完全無料</h2></div></div>
         <div class="edition-table">
-          <div class="edition free"><span class="edition-kicker">FREE</span><h3>無料版</h3><p>最初のスロットを使えます。保存した内容を［上書き］して、同じスロットを使い続けられます。</p></div>
-          <div class="edition paid"><span class="edition-kicker">3D CREATIVE STUDIO PRO</span><h3>Pro · 買い切り ¥2,500</h3><p>保存スロット数の制限がなくなり、複数の作業案を残せます。同じ Proキーで、きがえ工房の2組目以降の変換も解放します。</p><a href="https://appluna.booth.pm/items/9114686" target="_blank" rel="noopener noreferrer">3D 創作スタジオ Pro を見る <span aria-hidden="true">↗</span></a></div>
+          <div class="edition free"><span class="edition-kicker">FREE</span><h3>3D 創作スタジオ · ¥0</h3><p>保存スロットの数に上限はありません。複数の作業案を、いくつでも残せます。きがえ工房をふくむ全工房も、完全無料で使えます。</p><a href="https://appluna.booth.pm/items/9088311" target="_blank" rel="noopener noreferrer">3D 創作スタジオを見る <span aria-hidden="true">↗</span></a></div>
         </div>
         <ul class="check-list compact">
           <li>スロットは作成された順に並びます。</li>
           <li>スロットの名前変更と削除ができます。削除前には確認が表示され、削除したスロットは元に戻せません。</li>
-          <li>無料版では、2つ目以降を作成・呼び出し・上書き・名前変更しようとすると Pro の案内が表示されます。</li>
           <li>［呼び出す前に戻す］用の預かりは、スロット数に含まれません。</li>
         </ul>
         <p class="quiet">保存容量はパソコンの空き容量に依存します。保存対象は「戻るもの・戻らないもの」で確認できます。</p>
-      </section>
-
-      <section class="chapter" id="pro-key">
-        <div class="section-head"><span class="section-mark" aria-hidden="true">↗</span><div><p class="eyebrow">ONE KEY, TWO WORKSHOPS</p><h2>Proキーの入れ方</h2></div></div>
-        <p>無料の3D 創作スタジオ本体に、購入したキーを追加します。保存呼出し工房ときがえ工房で、同じキーを使います。</p>
-        <ol class="steps">
-          <li><span class="step-title">購入した ZIP を展開する</span><p><a href="https://appluna.booth.pm/items/9114686" target="_blank" rel="noopener noreferrer">BOOTH の Pro ページ</a>から <code>3D_CreativeStudio_Pro_Key.zip</code> をダウンロードして展開します。</p></li>
-          <li><span class="step-title">キーを Import する</span><p>本体を入れたプロジェクトで <code>3D_CreativeStudio_Pro_Key.unitypackage</code> を開き、すべてのチェックを入れたまま［Import］します。</p></li>
-          <li><span class="step-title">工房を開いて使う</span><p>読み込み後に工房を開き直します。保存呼出し工房では2つ目以降のスロット、きがえ工房では別の衣装セット・別アバターへの変換を利用できます。</p></li>
-        </ol>
-        <aside class="note note-blue"><strong>本体を更新しても、キーは残します</strong><p>キーの保存場所は <code>Assets/Koubo_Pro</code> です。本体の版ごとにキーを取り直す必要はありません。本体を更新するときも、このフォルダと保存ライブラリを残してください。</p></aside>
-        <h3>Pro にならないとき</h3>
-        <p>本体が Proキー対応版であることと、<code>Assets/Koubo_Pro/KouboProLicense.bytes</code> があることを確認します。キーの内容は編集せず、購入済みのパッケージを再度 Import してください。キーを外すと無料版の利用枠に戻ります。2つ目以降のスロットを使うときはキーを再度取り込みます。</p>
-        <p><a href="https://creativeandcreative9.github.io/GP12_manual/">きがえ工房の1組無料体験と Pro の説明を見る →</a></p>
+        <aside class="note note-blue"><strong>以前 Pro キーを入れた方へ</strong><p><code>Assets/Koubo_Pro</code> はそのまま残して構いません。本体を更新しても、保存ライブラリは残ります。</p></aside>
       </section>
 
       <section class="closing" aria-label="保存場所">
@@ -200,7 +184,7 @@
       </footer>
     <section class="chapter" id="common-updates"><h2>更新と版数管理</h2>
 <p>工房名が並ぶ最上段のすぐ下に、左側に［版数管理］、その右隣りに更新状態があります。6工房のどこからでも使えます。［版数管理］で、スタジオと6工房の導入版の一覧を開閉します。編集モードは切り替わりません。</p>
-<ol><li>［更新があります］を押します。更新対象は3D 創作スタジオの全工房です。</li><li>未保存のシーンがある場合は保存します。保存をやめた場合は更新も開始しません。</li><li>ダウンロードとファイルの検証後、全項目が自動でImportされます。項目の選択画面は開きません。</li><li>コンパイルと導入版の確認が終わり、［最新版です］に変わるまで待ちます。Proキー、変換結果、保存ポーズ、保存呼出し工房のデータは保持されます。</li></ol>
+<ol><li>［更新があります］を押します。更新対象は3D 創作スタジオの全工房です。</li><li>未保存のシーンがある場合は保存します。保存をやめた場合は更新も開始しません。</li><li>ダウンロードとファイルの検証後、全項目が自動でImportされます。項目の選択画面は開きません。</li><li>コンパイルと導入版の確認が終わり、［最新版です］に変わるまで待ちます。変換結果、保存ポーズ、保存呼出し工房のデータは保持されます。</li></ol>
 <p>確認前は［更新を確認］、通信に失敗した場合は理由と［再確認］が表示されます。版数一覧の［更新を確認］からも調べられます。自動確認はポーズ工房の設定を引き継ぎ、どの工房からも1日1回を目安に行います。通信できないときも工房の編集は使えます。</p>
 <p>画像は開発環境のため［開発版］と表示されています。Gitクローンは配布物で上書きせずGitから更新します。Packages版はPackage ManagerまたはVCCから更新します。</p>
 <figure><img style="max-width:100%;height:auto" src="images/common-updates-20261109.png" alt="工房切り替え帯の直下にある更新状態と版数管理、および6工房の導入版一覧" loading="lazy"><figcaption>左揃えの［版数管理］、右隣りの更新通知と版数一覧。［版数管理］をもう一度押すと閉じます。</figcaption></figure>
